@@ -1915,3 +1915,1032 @@ Processing by SongsController#index as HTML
   Rendered songs/index.html.erb within layouts/application (1.1ms)
 Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
   [1m[36m (1.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.9ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (2.0ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (1.8ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:54:21.765042"], ["updated_at", "2017-12-21 15:54:21.765042"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/artists/1" for 127.0.0.1 at 2017-12-21 10:54:21 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered artists/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 757ms (Views: 731.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:54:22.540117"], ["updated_at", "2017-12-21 15:54:22.540117"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/artists/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered artists/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:54:22.553377"], ["updated_at", "2017-12-21 15:54:22.553377"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/artists/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered artists/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/artists/new" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by ArtistsController#new as HTML
+  Rendered artists/new.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 34ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+Started POST "/artists" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "artist"=>{"name"=>"My artist name", "bio"=>"My artist bio"}, "commit"=>"Create Artist"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My artist name"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:54:22.609749"], ["updated_at", "2017-12-21 15:54:22.609749"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/artists/1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/artists/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered artists/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:54:22.619092"], ["updated_at", "2017-12-21 15:54:22.619092"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/artists/1/edit" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by ArtistsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered artists/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.1ms)
+Started PATCH "/artists/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by ArtistsController#update as HTML
+  Parameters: {"utf8"=>"✓", "artist"=>{"name"=>"My edit", "bio"=>"My artist bio"}, "commit"=>"Update Artist", "id"=>"1"}
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "artists" SET "name" = ?, "updated_at" = ? WHERE "artists"."id" = ?  [["name", "My edit"], ["updated_at", "2017-12-21 15:54:22.634267"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/artists/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/artists/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered artists/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:54:22.646703"], ["updated_at", "2017-12-21 15:54:22.646703"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/genres/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGenre Load (0.1ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered genres/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:54:22.663313"], ["updated_at", "2017-12-21 15:54:22.663313"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/genres/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGenre Load (0.0ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered genres/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/genres/new" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by GenresController#new as HTML
+  Rendered genres/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+Started POST "/genres" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by GenresController#create as HTML
+  Parameters: {"utf8"=>"✓", "genre"=>{"name"=>"My genre name"}, "commit"=>"Create Genre"}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My genre name"], ["created_at", "2017-12-21 15:54:22.684618"], ["updated_at", "2017-12-21 15:54:22.684618"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/genres/1
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/genres/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGenre Load (0.1ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered genres/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:54:22.692951"], ["updated_at", "2017-12-21 15:54:22.692951"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/genres/1/edit" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by GenresController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGenre Load (0.1ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered genres/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+Started PATCH "/genres/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by GenresController#update as HTML
+  Parameters: {"utf8"=>"✓", "genre"=>{"name"=>"My edit"}, "commit"=>"Update Genre", "id"=>"1"}
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "genres" SET "name" = ?, "updated_at" = ? WHERE "genres"."id" = ?[0m  [["name", "My edit"], ["updated_at", "2017-12-21 15:54:22.712116"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/genres/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/genres/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered genres/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:54:22.725278"], ["updated_at", "2017-12-21 15:54:22.725278"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:54:22.728390"], ["updated_at", "2017-12-21 15:54:22.728390"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:54:22.735798"], ["updated_at", "2017-12-21 15:54:22.735798"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (1.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:54:22.775974"], ["updated_at", "2017-12-21 15:54:22.775974"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:54:22.777478"], ["updated_at", "2017-12-21 15:54:22.777478"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:54:22.778702"], ["updated_at", "2017-12-21 15:54:22.778702"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.0ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:54:22.788372"], ["updated_at", "2017-12-21 15:54:22.788372"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:54:22.789799"], ["updated_at", "2017-12-21 15:54:22.789799"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:54:22.791038"], ["updated_at", "2017-12-21 15:54:22.791038"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (1.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:54:22.803834"], ["updated_at", "2017-12-21 15:54:22.803834"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:54:22.805531"], ["updated_at", "2017-12-21 15:54:22.805531"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:54:22.806601"], ["updated_at", "2017-12-21 15:54:22.806601"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.0ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:54:22.817133"], ["updated_at", "2017-12-21 15:54:22.817133"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:54:22.818874"], ["updated_at", "2017-12-21 15:54:22.818874"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/songs/new" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+Started POST "/songs" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "song"=>{"name"=>"My song name", "artist_id"=>"1", "genre_id"=>"1"}, "commit"=>"Create Song"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My song name"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:54:22.836094"], ["updated_at", "2017-12-21 15:54:22.836094"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/songs/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (1.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:54:22.846240"], ["updated_at", "2017-12-21 15:54:22.846240"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:54:22.847641"], ["updated_at", "2017-12-21 15:54:22.847641"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:54:22.848843"], ["updated_at", "2017-12-21 15:54:22.848843"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/1/edit" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/edit.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms)
+Started PATCH "/songs/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by SongsController#update as HTML
+  Parameters: {"utf8"=>"✓", "song"=>{"name"=>"My edit", "artist_id"=>"1", "genre_id"=>"1"}, "commit"=>"Update Song", "id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "songs" SET "name" = ?, "updated_at" = ? WHERE "songs"."id" = ?  [["name", "My edit"], ["updated_at", "2017-12-21 15:54:22.865000"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/songs/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGenre Load (0.0ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:54:22.874945"], ["updated_at", "2017-12-21 15:54:22.874945"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "My Genre"], ["created_at", "2017-12-21 15:54:22.876847"], ["updated_at", "2017-12-21 15:54:22.876847"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:54:22.878152"], ["updated_at", "2017-12-21 15:54:22.878152"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/songs" for 127.0.0.1 at 2017-12-21 10:54:22 -0500
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  Rendered songs/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 25ms (Views: 24.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.2ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.8ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (2.0ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:41.520090"], ["updated_at", "2017-12-21 15:55:41.520090"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/artists/1" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered artists/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 190ms (Views: 175.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:41.730557"], ["updated_at", "2017-12-21 15:55:41.730557"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/artists/1" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered artists/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:41.739648"], ["updated_at", "2017-12-21 15:55:41.739648"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/artists/1" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered artists/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/artists/new" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by ArtistsController#new as HTML
+  Rendered artists/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+Started POST "/artists" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "artist"=>{"name"=>"My artist name", "bio"=>"My artist bio"}, "commit"=>"Create Artist"}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My artist name"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:41.772951"], ["updated_at", "2017-12-21 15:55:41.772951"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/artists/1
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/artists/1" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered artists/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:41.781590"], ["updated_at", "2017-12-21 15:55:41.781590"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/artists/1/edit" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by ArtistsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered artists/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+Started PATCH "/artists/1" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by ArtistsController#update as HTML
+  Parameters: {"utf8"=>"✓", "artist"=>{"name"=>"My edit", "bio"=>"My artist bio"}, "commit"=>"Update Artist", "id"=>"1"}
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "artists" SET "name" = ?, "updated_at" = ? WHERE "artists"."id" = ?  [["name", "My edit"], ["updated_at", "2017-12-21 15:55:41.796407"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/artists/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/artists/1" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered artists/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:41.810634"], ["updated_at", "2017-12-21 15:55:41.810634"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/genres/1" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGenre Load (0.1ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered genres/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:41.831005"], ["updated_at", "2017-12-21 15:55:41.831005"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/genres/1" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGenre Load (0.0ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered genres/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/genres/new" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by GenresController#new as HTML
+  Rendered genres/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+Started POST "/genres" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by GenresController#create as HTML
+  Parameters: {"utf8"=>"✓", "genre"=>{"name"=>"My genre name"}, "commit"=>"Create Genre"}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My genre name"], ["created_at", "2017-12-21 15:55:41.853451"], ["updated_at", "2017-12-21 15:55:41.853451"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/genres/1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/genres/1" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGenre Load (0.7ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered genres/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.7ms)
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:41.875567"], ["updated_at", "2017-12-21 15:55:41.875567"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/genres/1/edit" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by GenresController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGenre Load (0.1ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered genres/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms)
+Started PATCH "/genres/1" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by GenresController#update as HTML
+  Parameters: {"utf8"=>"✓", "genre"=>{"name"=>"My edit"}, "commit"=>"Update Genre", "id"=>"1"}
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "genres" SET "name" = ?, "updated_at" = ? WHERE "genres"."id" = ?[0m  [["name", "My edit"], ["updated_at", "2017-12-21 15:55:41.892403"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/genres/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/genres/1" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered genres/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:41.903405"], ["updated_at", "2017-12-21 15:55:41.903405"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:41.905466"], ["updated_at", "2017-12-21 15:55:41.905466"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:55:41.919051"], ["updated_at", "2017-12-21 15:55:41.919051"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 30ms (Views: 27.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:41.961952"], ["updated_at", "2017-12-21 15:55:41.961952"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:41.964466"], ["updated_at", "2017-12-21 15:55:41.964466"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:55:41.965852"], ["updated_at", "2017-12-21 15:55:41.965852"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.0ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:41.978865"], ["updated_at", "2017-12-21 15:55:41.978865"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:41.980795"], ["updated_at", "2017-12-21 15:55:41.980795"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:55:41.982204"], ["updated_at", "2017-12-21 15:55:41.982204"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:55:41 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.3ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+  [1m[35m (1.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:41.997146"], ["updated_at", "2017-12-21 15:55:41.997146"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:41.999441"], ["updated_at", "2017-12-21 15:55:41.999441"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:55:42.000866"], ["updated_at", "2017-12-21 15:55:42.000866"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:55:42 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (1.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:42.011353"], ["updated_at", "2017-12-21 15:55:42.011353"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:42.012937"], ["updated_at", "2017-12-21 15:55:42.012937"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/songs/new" for 127.0.0.1 at 2017-12-21 10:55:42 -0500
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+Started POST "/songs" for 127.0.0.1 at 2017-12-21 10:55:42 -0500
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "song"=>{"name"=>"My song name", "artist_id"=>"1", "genre_id"=>"1"}, "commit"=>"Create Song"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My song name"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:55:42.029580"], ["updated_at", "2017-12-21 15:55:42.029580"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/songs/1
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:55:42 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.0ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:42.040484"], ["updated_at", "2017-12-21 15:55:42.040484"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:42.041864"], ["updated_at", "2017-12-21 15:55:42.041864"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:55:42.042937"], ["updated_at", "2017-12-21 15:55:42.042937"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/1/edit" for 127.0.0.1 at 2017-12-21 10:55:42 -0500
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms)
+Started PATCH "/songs/1" for 127.0.0.1 at 2017-12-21 10:55:42 -0500
+Processing by SongsController#update as HTML
+  Parameters: {"utf8"=>"✓", "song"=>{"name"=>"My edit", "artist_id"=>"1", "genre_id"=>"1"}, "commit"=>"Update Song", "id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "songs" SET "name" = ?, "updated_at" = ? WHERE "songs"."id" = ?  [["name", "My edit"], ["updated_at", "2017-12-21 15:55:42.057607"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/songs/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:55:42 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGenre Load (0.0ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:42.068866"], ["updated_at", "2017-12-21 15:55:42.068866"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:42.071393"], ["updated_at", "2017-12-21 15:55:42.071393"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:55:42.072670"], ["updated_at", "2017-12-21 15:55:42.072670"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/songs" for 127.0.0.1 at 2017-12-21 10:55:42 -0500
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (0.2ms)[0m  SELECT "songs".* FROM "songs"
+  Rendered songs/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (1.6ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.9ms)[0m  DELETE FROM "artists";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'artists';
+  [1m[36m (1.8ms)[0m  [1mDELETE FROM "genres";[0m
+  [1m[35m (0.1ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'genres';[0m
+  [1m[35m (1.9ms)[0m  DELETE FROM "songs";
+  [1m[36m (0.1ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'songs';
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:59.048841"], ["updated_at", "2017-12-21 15:55:59.048841"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/artists/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered artists/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 194ms (Views: 177.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:59.264525"], ["updated_at", "2017-12-21 15:55:59.264525"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/artists/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered artists/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:59.274855"], ["updated_at", "2017-12-21 15:55:59.274855"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/artists/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered artists/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/artists/new" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by ArtistsController#new as HTML
+  Rendered artists/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 13ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+Started POST "/artists" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "artist"=>{"name"=>"My artist name", "bio"=>"My artist bio"}, "commit"=>"Create Artist"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My artist name"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:59.307754"], ["updated_at", "2017-12-21 15:55:59.307754"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/artists/1
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/artists/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered artists/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:59.319523"], ["updated_at", "2017-12-21 15:55:59.319523"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/artists/1/edit" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by ArtistsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered artists/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+Started PATCH "/artists/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by ArtistsController#update as HTML
+  Parameters: {"utf8"=>"✓", "artist"=>{"name"=>"My edit", "bio"=>"My artist bio"}, "commit"=>"Update Artist", "id"=>"1"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "artists" SET "name" = ?, "updated_at" = ? WHERE "artists"."id" = ?  [["name", "My edit"], ["updated_at", "2017-12-21 15:55:59.333999"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/artists/1
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+Started GET "/artists/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered artists/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:59.348584"], ["updated_at", "2017-12-21 15:55:59.348584"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/genres/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGenre Load (0.1ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered genres/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:59.370048"], ["updated_at", "2017-12-21 15:55:59.370048"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/genres/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGenre Load (0.1ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered genres/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/genres/new" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by GenresController#new as HTML
+  Rendered genres/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+Started POST "/genres" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by GenresController#create as HTML
+  Parameters: {"utf8"=>"✓", "genre"=>{"name"=>"My genre name"}, "commit"=>"Create Genre"}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My genre name"], ["created_at", "2017-12-21 15:55:59.397238"], ["updated_at", "2017-12-21 15:55:59.397238"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/genres/1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/genres/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGenre Load (0.0ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered genres/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (1.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:59.408381"], ["updated_at", "2017-12-21 15:55:59.408381"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/genres/1/edit" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by GenresController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGenre Load (0.0ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered genres/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+Started PATCH "/genres/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by GenresController#update as HTML
+  Parameters: {"utf8"=>"✓", "genre"=>{"name"=>"My edit"}, "commit"=>"Update Genre", "id"=>"1"}
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "genres" SET "name" = ?, "updated_at" = ? WHERE "genres"."id" = ?[0m  [["name", "My edit"], ["updated_at", "2017-12-21 15:55:59.426405"], ["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/genres/1
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+Started GET "/genres/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered genres/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:59.438858"], ["updated_at", "2017-12-21 15:55:59.438858"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:59.441194"], ["updated_at", "2017-12-21 15:55:59.441194"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:55:59.454619"], ["updated_at", "2017-12-21 15:55:59.454619"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (5.7ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 29ms (Views: 21.9ms | ActiveRecord: 5.8ms)
+  [1m[35m (1.5ms)[0m  rollback transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:59.499245"], ["updated_at", "2017-12-21 15:55:59.499245"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:59.502275"], ["updated_at", "2017-12-21 15:55:59.502275"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:55:59.503675"], ["updated_at", "2017-12-21 15:55:59.503675"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:59.517204"], ["updated_at", "2017-12-21 15:55:59.517204"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:59.519539"], ["updated_at", "2017-12-21 15:55:59.519539"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:55:59.520988"], ["updated_at", "2017-12-21 15:55:59.520988"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.0ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (1.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:59.534387"], ["updated_at", "2017-12-21 15:55:59.534387"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:59.536057"], ["updated_at", "2017-12-21 15:55:59.536057"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:55:59.537632"], ["updated_at", "2017-12-21 15:55:59.537632"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGenre Load (0.1ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (1.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:59.550414"], ["updated_at", "2017-12-21 15:55:59.550414"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:59.552693"], ["updated_at", "2017-12-21 15:55:59.552693"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/songs/new" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by SongsController#new as HTML
+  Rendered songs/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+Started POST "/songs" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "song"=>{"name"=>"My song name", "artist_id"=>"1", "genre_id"=>"1"}, "commit"=>"Create Song"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My song name"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:55:59.570478"], ["updated_at", "2017-12-21 15:55:59.570478"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/songs/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mGenre Load (0.0ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (1.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:59.580846"], ["updated_at", "2017-12-21 15:55:59.580846"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:59.582864"], ["updated_at", "2017-12-21 15:55:59.582864"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:55:59.584050"], ["updated_at", "2017-12-21 15:55:59.584050"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/songs/1/edit" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.0ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+Started PATCH "/songs/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by SongsController#update as HTML
+  Parameters: {"utf8"=>"✓", "song"=>{"name"=>"My edit", "artist_id"=>"1", "genre_id"=>"1"}, "commit"=>"Update Song", "id"=>"1"}
+  [1m[35mSong Load (0.0ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "songs" SET "name" = ?, "updated_at" = ? WHERE "songs"."id" = ?  [["name", "My edit"], ["updated_at", "2017-12-21 15:55:59.600431"], ["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/songs/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/songs/1" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSong Load (0.0ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mGenre Load (0.0ms)[0m  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered songs/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "My Artist"], ["bio", "My artist bio"], ["created_at", "2017-12-21 15:55:59.609639"], ["updated_at", "2017-12-21 15:55:59.609639"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "My Genre"], ["created_at", "2017-12-21 15:55:59.611033"], ["updated_at", "2017-12-21 15:55:59.611033"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "songs" ("name", "artist_id", "genre_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "My Song"], ["artist_id", 1], ["genre_id", 1], ["created_at", "2017-12-21 15:55:59.612145"], ["updated_at", "2017-12-21 15:55:59.612145"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/songs" for 127.0.0.1 at 2017-12-21 10:55:59 -0500
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (0.1ms)[0m  SELECT "songs".* FROM "songs"
+  Rendered songs/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (1.3ms)[0m  [1mrollback transaction[0m
